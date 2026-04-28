@@ -17,7 +17,7 @@ jobs:
         uses: astral-sh/setup-uv@v1
 
       - name: install dependencies
-        run: uv sync
+        run: uv sync --all-groups
       
       - name: Run ruff check
         run: uv run ruff check src/ bin/
@@ -37,7 +37,7 @@ jobs:
         run: pip install uv
 
       - name: install dependencies
-        run: uv sync
+        run: uv sync --all-groups
       
       - name: Run tests
         run: uv run pytest tests/ -v
